@@ -1,0 +1,184 @@
+:root {
+    color-scheme: dark light;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    background-color: #060608;
+    color: #f5f7fa;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(circle at top, #0e1023, #040308 55%, #010102 100%);
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem clamp(1rem, 3vw, 2.5rem);
+    background: rgba(3, 6, 25, 0.8);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.site-title {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #76c9ff;
+}
+
+.site-nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.site-nav a {
+    color: #c3d4ff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+    background-color: rgba(118, 201, 255, 0.15);
+    color: #fff;
+}
+
+.site-nav a.active {
+    background-color: rgba(118, 201, 255, 0.35);
+    color: #fff;
+}
+
+main {
+    flex: 1;
+    width: min(900px, 92vw);
+    margin: 0 auto;
+    padding: clamp(1.5rem, 5vw, 3rem) 0 4rem;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: clamp(1.5rem, 5vw, 2.5rem);
+}
+
+.intro h1 {
+    margin-bottom: 0.5rem;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: #76c9ff;
+}
+
+.intro p {
+    margin: 0 auto;
+    max-width: 55ch;
+    line-height: 1.6;
+    color: rgba(229, 235, 255, 0.85);
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    background: rgba(10, 16, 38, 0.7);
+    padding: 0.6rem 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(118, 201, 255, 0.2);
+}
+
+#status {
+    color: #ff8c8c;
+    font-weight: 600;
+}
+
+.canvas-wrapper {
+    position: relative;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    border: 2px solid rgba(118, 201, 255, 0.35);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+    background: linear-gradient(145deg, rgba(12, 18, 40, 0.8), rgba(3, 5, 18, 0.9));
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.touch-controls {
+    position: absolute;
+    inset: auto 0 0;
+    display: none;
+    gap: 0.75rem;
+    justify-content: center;
+    padding: 0.75rem 1rem 1rem;
+    background: linear-gradient(180deg, rgba(6, 12, 24, 0) 0%, rgba(6, 12, 24, 0.85) 55%, rgba(6, 12, 24, 1) 100%);
+}
+
+.touch-controls button {
+    background: rgba(118, 201, 255, 0.18);
+    color: #f5f7fa;
+    border: 1px solid rgba(118, 201, 255, 0.35);
+    width: clamp(3.5rem, 14vw, 4.5rem);
+    height: clamp(3.5rem, 14vw, 4.5rem);
+    border-radius: 999px;
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+    font-weight: 700;
+    display: grid;
+    place-items: center;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.touch-controls button:active,
+.touch-controls button[data-active="true"] {
+    transform: scale(0.95);
+    background: rgba(118, 201, 255, 0.4);
+}
+
+.site-footer {
+    text-align: center;
+    padding: 1.5rem 0 2.5rem;
+    color: rgba(229, 235, 255, 0.65);
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+    }
+
+    .scoreboard {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .touch-controls {
+        display: flex;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

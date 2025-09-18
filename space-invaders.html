@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Space Invaders - burkunk.nl</title>
+    <link rel="stylesheet" href="assets/css/space-invaders.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="branding">
+            <a href="index.html" class="site-title">burkunk.nl</a>
+        </div>
+        <nav class="site-nav" aria-label="Hoofdmenu">
+            <a href="index.html">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="space-invaders.html" class="active" aria-current="page">Space Invaders</a>
+        </nav>
+    </header>
+    <main>
+        <section class="intro">
+            <h1>Space Invaders</h1>
+            <p>Speel de klassieke Space Invaders direct in je browser. Gebruik de pijltjestoetsen of de knoppen op mobiel om het ruimteschip te bewegen en schiet de aliens neer voordat ze de aarde bereiken.</p>
+        </section>
+        <section class="game-section">
+            <div class="scoreboard" role="status" aria-live="polite">
+                <span id="score">Score: 0</span>
+                <span id="status"></span>
+            </div>
+            <div class="canvas-wrapper">
+                <canvas id="space-invaders-canvas" width="800" height="600" aria-label="Space Invaders canvas" role="img"></canvas>
+                <div class="touch-controls" aria-label="Mobiele bediening">
+                    <button type="button" data-action="left" aria-label="Beweeg naar links">◀</button>
+                    <button type="button" data-action="shoot" aria-label="Schieten">⨀</button>
+                    <button type="button" data-action="right" aria-label="Beweeg naar rechts">▶</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <p>&copy; <span id="year"></span> burkunk.nl &mdash; Retro games en meer.</p>
+    </footer>
+    <script defer src="assets/js/space-invaders.js"></script>
+</body>
+</html>
